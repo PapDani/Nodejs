@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <ul class="sidenav" id="menu">
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="editGallery.html">Edit gallery</a></li>
+    <li><a href="creators.html">Creators</a></li>
+  </ul>
+
+  <div class="contentDiv" id="content">
+    <h2 style="text-align:center">Gallery</h2>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="">
+          <img src="" alt="First picture" width="600" height="400">
+        </a>
+        <div class="desc">Image Title</div>
+        <div class="desc">Image description</div>
+      </div>
+    </div>
+
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="">
+          <img src="" alt="Second Picture" width="600" height="400">
+        </a>
+        <div class="desc">Image Title</div>
+        <div class="desc">Image description</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="">
+          <img src="" alt="Third Picture" width="600" height="400">
+        </a>
+        <div class="desc">Image Title</div>
+        <div class="desc">Image description</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="">
+          <img src="" alt="Fourth Picture" width="600" height="400">
+        </a>
+        <div class="desc">Image Title</div>
+        <div class="desc">Image description</div>
+      </div>
+    </div>
+
+    <div id="addPicture">
+      <input type="file" id="fileInput" accept="image/*">
+    </div>
+    <div id="selectCreator">
+      <label for="creators">Choose a creator:</label>
+      <select id="creators" name="creators">
+        <option value="">Existing creators</option>
+        <option value="test1">test1</option>
+        <option value="test2">test2</option>
+      </select>
+      <a href="addCreator.html"><button>Add new creator</button></a>
+    </div>
+    <div>
+      <button>Add picture</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
