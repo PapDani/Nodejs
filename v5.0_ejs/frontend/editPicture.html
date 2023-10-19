@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Picture</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul class="sidenav" id="menu">
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="editGallery.html">Edit gallery</a></li>
+        <li><a href="creators.html">Creators</a></li>
+      </ul>
+    
+      <div class="contentDiv" id="content">
+        <h2 style="text-align:center">Edit Picture data</h2>
+    
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="">
+              <img src="" alt="First picture" width="600" height="400">
+            </a>
+            <div class="desc">Image Title</div>
+            <div class="desc">Image description</div>
+          </div>
+          <div class="editPictureForm">
+            <input class="desc" placeholder="Image title">
+            <input class="desc" placeholder="Image description">
+            <!--Lehet listtel vagy táblával jobba járok, majd ha lesz backend meg adatok akkor kiderül-->
+            <br>
+            <label>Image ID: 1.</label>
+            <br>
+            <label>Picture uploaded: xxxx-xx-xx</label>
+            <br>
+            <label>Data modified at: xxxx-xx-xx</label>
+            <br>
+            <label>Picture deleted at: xxxx-xx-xx</label>
+            <br>
+            <label>Created by: xy</label>
+            <div>
+                <a href="editGallery.html"><button>Cancel</button></a>
+                <button>Update</button>
+            </div>
+          </div>
+        </div>
+</body>
+</html>
