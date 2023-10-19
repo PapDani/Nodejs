@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creators</title>
+    <title>Edit Creator</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -16,19 +16,24 @@
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="editGallery.html">Edit gallery</a></li>
         <li><a href="creators.html">Creators</a></li>
+        <li><a href="addPicture.html">Add picture</a></li>
     </ul>
 
     <div class="contentDiv" id="content">
-        <h2 style="text-align:center">Creators</h2>
+        <h2 style="text-align:center">Edit Creator</h2>
 
         <div class="card">
-            <img src="" alt="Profile picture" style="width:100%">
-            <h1>Name</h1>
-            <p>Email</p>
+            <label>Change profile picture (optional)</label>
+            <div id="addPicture">
+                <input type="file" id="fileInput" accept="image/*">
+              </div>
+            <p><input placeholder="Name"></p>
+            <p><input placeholder="Email"></p>
             <p>Number of pictures</p>
-            <p>
-                <a href="editCreator.html"><button class="profileButton">Edit</button></a>
-            </p>
+            <div>
+                <a href="creators.html"><button>Cancel</button></a>
+                <button>Update</button>
+            </div>
         </div>
     </div>
 
