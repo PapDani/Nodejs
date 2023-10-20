@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Picture</title>
+<%- include('./common/header', {page_title: "Edit Picture"}) -%>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <ul class="sidenav" id="menu">
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="editGallery.html">Edit gallery</a></li>
-        <li><a href="creators.html">Creators</a></li>
-        <li><a href="addPicture.html">Add picture</a></li>
-      </ul>
+<%- include('./common/menu') -%>
     
       <div class="contentDiv" id="content">
         <h2 style="text-align:center">Edit Picture data</h2>
@@ -46,5 +33,5 @@
             </div>
           </div>
         </div>
-</body>
-</html>
+
+<%- include('./common/footer') -%>

@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('header', {page_title: "Gallery"}) -%>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery</title>
-
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-  <ul class="sidenav" id="menu">
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="editGallery.html">Edit gallery</a></li>
-    <li><a href="creators.html">Creators</a></li>
-    <li><a href="addPicture.html">Add picture</a></li>
-  </ul>
+<%- include('./common/menu') -%>
 
   <div class="contentDiv" id="content">
     <h2 style="text-align:center">Gallery</h2>
@@ -61,6 +45,4 @@
         <div class="desc">Image description</div>
       </div>
     </div>
-</body>
-
-</html>
+    <%- include('footer') -%>

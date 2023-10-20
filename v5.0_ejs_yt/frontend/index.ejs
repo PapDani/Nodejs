@@ -1,5 +1,6 @@
-<!-- <%- include('header') -%> -->
-<!DOCTYPE html>
+<%- include('./common/header', {page_title: "Main page"}) -%>
+
+<!--<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,7 +11,8 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body>-->
+
     <!--<ul class="sidenav" id="menu">
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="editGallery.html">Edit gallery</a></li>
@@ -18,13 +20,11 @@
         <li><a href="addPicture.html">Add picture</a></li>
     </ul>-->
     
-    <%- include('menu') -%>
+    <%- include('./common/menu') -%>
 
     <div class="contentDiv" id="content">
         <h1>Main Page</h1>
         <h2><%= header2 %></h2>
     </div>
 
-</body>
-
-</html>
+<%- include('./common/footer') -%>

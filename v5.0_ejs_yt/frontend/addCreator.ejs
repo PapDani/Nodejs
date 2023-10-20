@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./common/header', {page_title: "Add Creator"}) -%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add new creator</title>
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-
-    <ul class="sidenav" id="menu">
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="editGallery.html">Edit gallery</a></li>
-        <li><a href="creators.html">Creators</a></li>
-        <li><a href="addPicture.html">Add picture</a></li>
-    </ul>
+<%- include('./common/menu') -%>
 
     <div class="contentDiv" id="content">
         <h2 style="text-align:center">Creators</h2>
@@ -30,14 +13,11 @@
             <p><input placeholder="Name"></p>
             <p><input placeholder="Email"></p>
             <div>
+                <!--TODO kicserélni linket-->
                 <a href="gallery.html"><button>Cancel</button></a>
                 <button>Add creator</button>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
-
-</body>
-
-</html>
+<%- include('./common/footer') -%>
