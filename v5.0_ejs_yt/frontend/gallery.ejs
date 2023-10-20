@@ -5,44 +5,16 @@
   <div class="contentDiv" id="content">
     <h2 style="text-align:center">Gallery</h2>
 
+    <!--for-->
     <div class="responsive">
       <div class="gallery">
         <a target="_blank" href="">
-          <img src="" alt="First picture" width="600" height="400">
+          <!--felül vizsgálni, működő db után-->
+          <img src="<%= picture_data.image %>" alt="<%= picture_data.image_description %>" width="600" height="400">
         </a>
-        <div class="desc">Image Title</div>
-        <div class="desc">Image description</div>
+        <div class="desc"><%= picture_data.image_title %></div>
+        <div class="desc"><%= picture_data.image_description %></div>
       </div>
     </div>
 
-
-    <div class="responsive">
-      <div class="gallery">
-        <a target="_blank" href="">
-          <img src="" alt="Second Picture" width="600" height="400">
-        </a>
-        <div class="desc">Image Title</div>
-        <div class="desc">Image description</div>
-      </div>
-    </div>
-
-    <div class="responsive">
-      <div class="gallery">
-        <a target="_blank" href="">
-          <img src="" alt="Third Picture" width="600" height="400">
-        </a>
-        <div class="desc">Image Title</div>
-        <div class="desc">Image description</div>
-      </div>
-    </div>
-
-    <div class="responsive">
-      <div class="gallery">
-        <a target="_blank" href="">
-          <img src="" alt="Fourth Picture" width="600" height="400">
-        </a>
-        <div class="desc">Image Title</div>
-        <div class="desc">Image description</div>
-      </div>
-    </div>
-    <%- include('footer') -%>
+<%- include('footer') -%>

@@ -5,74 +5,27 @@
   <div class="contentDiv" id="content">
     <h2 style="text-align:center">Edit Gallery</h2>
 
+    <!--for-->
     <div class="responsive">
       <div class="gallery">
         <a target="_blank" href="">
-          <img src="" alt="First picture" width="600" height="400">
+          <img src="<%= picture_data.image %>" alt="<%= picture_data.image_description %>" width="600" height="400">
         </a>
-        <div class="desc">Image Title</div>
-        <div class="desc">Image description</div>
+        <div class="desc"><%= picture_data.image_title %></div>
+        <div class="desc"><%= picture_data.image_description %></div>
       </div>
       <div class="center">
         <!--TODO editálásra kiválasztott
              kép adatainak edit oldalra való átvitele vagy kép ID alapján
               az edit picture oldalon az adott kép adatainak lekérdezése
                adatbázisból-->
+        <!--link cseréje és id átadás-->
         <a href="editPicture.html"><button class="changeButton">Edit</button></a>
       </div>
       <div class="center">
+        <!--id átadás-->
         <button class="deleteButton">Delete</button>
       </div>
     </div>
-
-
-    <div class="responsive">
-      <div class="gallery">
-        <a target="_blank" href="">
-          <img src="" alt="Second Picture" width="600" height="400">
-        </a>
-        <div class="desc">Image Title</div>
-        <div class="desc">Image description</div>
-      </div>
-      <div class="center">
-        <button class="changeButton">Edit</button>
-      </div>
-      <div class="center">
-        <button class="deleteButton">Delete</button>
-      </div>
-    </div>
-
-    <div class="responsive">
-      <div class="gallery">
-        <a target="_blank" href="">
-          <img src="" alt="Third Picture" width="600" height="400">
-        </a>
-        <div class="desc">Image Title</div>
-        <div class="desc">Image description</div>
-      </div>
-      <div class="center">
-        <button class="changeButton">Edit</button>
-      </div>
-      <div class="center">
-        <button class="deleteButton">Delete</button>
-      </div>
-    </div>
-
-    <div class="responsive">
-      <div class="gallery">
-        <a target="_blank" href="">
-          <img src="" alt="Fourth Picture" width="600" height="400">
-        </a>
-        <div class="desc">Image Title</div>
-        <div class="desc">Image description</div>
-      </div>
-      <div class="center">
-        <button class="changeButton">Edit</button>
-      </div>
-      <div class="center">
-        <button class="deleteButton">Delete</button>
-      </div>
-    </div>
-  </div>
 
 <%- include('./common/footer') -%>
