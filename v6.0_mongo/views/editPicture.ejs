@@ -1,0 +1,39 @@
+<%- include('./common/header', {page_title: "Edit Picture"}) -%>
+
+<%- include('./common/menu') -%>
+    
+      <div class="contentDiv" id="content">
+        <h2 style="text-align:center">Edit Picture data</h2>
+    
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="">
+              <img src="<%= picture_data.image %>" alt="<%= picture_data.image_description %>" width="600" height="400">
+            </a>
+            <div class="desc"><%= picture_data.title %></div>
+            <div class="desc"><%= picture_data.description %></div>
+          </div>
+          <div class="editPictureForm">
+            <input class="desc" placeholder="Image title">
+            <input class="desc" placeholder="Image description">
+            <!--Lehet listtel vagy táblával jobba járok, majd ha lesz backend meg adatok akkor kiderül-->
+            <br>
+            <label>Image ID: <%= picture_data._id %></label>
+            <br>
+            <label>Picture uploaded: <%= picture_data.uploaded_at %></label>
+            <br>
+            <label>Data modified at: <%= picture_data.modified_at %></label>
+            <br>
+            <!--lehet nem fogom használni, tárolni, majd sémánál és db logikánál eldöntöm-->
+            <label>Picture deleted at: xxxx-xx-xx</label>
+            <br>
+            <label>Created by: <%= picture_data.created_by %></label>
+            <div>
+              <!--TODO kicserélni linket-->
+                <a href="editGallery.html"><button>Cancel</button></a>
+                <button>Update</button>
+            </div>
+          </div>
+        </div>
+
+<%- include('./common/footer') -%>
