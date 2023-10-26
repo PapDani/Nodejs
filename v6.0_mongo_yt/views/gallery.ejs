@@ -1,0 +1,20 @@
+<%- include('header', {page_title: "Gallery"}) -%>
+
+<%- include('./common/menu') -%>
+
+  <div class="contentDiv" id="content">
+    <h2 style="text-align:center">Gallery</h2>
+
+    <!--for-->
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="">
+          <!--felül vizsgálni, működő db után-->
+          <img src="<%= picture_data.image %>" alt="<%= picture_data.image_description %>" width="600" height="400">
+        </a>
+        <div class="desc"><%= picture_data.image_title %></div>
+        <div class="desc"><%= picture_data.image_description %></div>
+      </div>
+    </div>
+
+<%- include('footer') -%>

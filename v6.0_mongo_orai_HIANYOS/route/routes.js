@@ -36,3 +36,7 @@ module.exports = function(app){
     app.use('/pictures/updatePicture/:pictureId');
     */
 }
+
+// error handle MW, npm oldalról
+
+//app.use(errorHandlerMW)
