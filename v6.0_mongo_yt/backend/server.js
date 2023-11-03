@@ -2,10 +2,10 @@ const Creator = require('../models/creator');
 
 //CRUD ide
 //Create
-const Creator = new Creator
+//const Creator = new Creator
 
 //R
-Creator.find().then()
+//Creator.find().then()
 
 //U
 
