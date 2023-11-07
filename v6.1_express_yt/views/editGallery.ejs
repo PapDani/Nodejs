@@ -1,0 +1,31 @@
+<%- include('./common/header', {page_title: "Edit Gallery"}) -%>
+
+<%- include('./common/menu') -%>
+
+  <div class="contentDiv" id="content">
+    <h2 style="text-align:center">Edit Gallery</h2>
+
+    <!--for-->
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="">
+          <img src="<%= picture_data.image %>" alt="<%= picture_data.image_description %>" width="600" height="400">
+        </a>
+        <div class="desc"><%= picture_data.image_title %></div>
+        <div class="desc"><%= picture_data.image_description %></div>
+      </div>
+      <div class="center">
+        <!--TODO editálásra kiválasztott
+             kép adatainak edit oldalra való átvitele vagy kép ID alapján
+              az edit picture oldalon az adott kép adatainak lekérdezése
+               adatbázisból-->
+        <!--link cseréje és id átadás-->
+        <a href="editPicture.html"><button class="changeButton">Edit</button></a>
+      </div>
+      <div class="center">
+        <!--id átadás-->
+        <button class="deleteButton">Delete</button>
+      </div>
+    </div>
+
+<%- include('./common/footer') -%>

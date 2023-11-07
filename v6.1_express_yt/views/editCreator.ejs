@@ -1,0 +1,24 @@
+<%- include('./common/header', {page_title: "Edit Creator"}) -%>
+
+<%- include('./common/menu') -%>
+
+    <div class="contentDiv" id="content">
+        <h2 style="text-align:center">Edit Creator</h2>
+
+        <div class="card">
+            <label>Change profile picture (optional)</label>
+            <div id="addPicture">
+                <input type="file" id="fileInput" accept="image/*">
+              </div>
+            <p><input placeholder="Name"></p>
+            <p><input placeholder="Email"></p>
+            <p>Number of pictures: <%= creator_data.number_of_pictures %></p>
+            <div>
+                <!--TODO kicserélni linket-->
+                <a href="creators.html"><button>Cancel</button></a>
+                <button>Update</button>
+            </div>
+        </div>
+    </div>
+
+<%- include('./common/footer') -%>

@@ -1,0 +1,22 @@
+<%- include('./common/header', {page_title: "Add Creator"}) -%>
+
+<%- include('./common/menu') -%>
+
+    <div class="contentDiv" id="content">
+        <h2 style="text-align:center">Creators</h2>
+
+        <div class="card">
+            <label>Add profile picture (optional)</label>
+            <div id="addPicture">
+                <input type="file" id="fileInput" accept="image/*">
+              </div>
+            <p><input placeholder="Name"></p>
+            <p><input placeholder="Email"></p>
+            <div>
+                <!--TODO kicserélni linket-->
+                <button>Add creator</button>
+            </div>
+        </div>
+    </div>
+
+<%- include('./common/footer') -%>

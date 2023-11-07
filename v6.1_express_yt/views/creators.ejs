@@ -1,0 +1,22 @@
+<%- include('./common/header', {page_title: "Creators"}) -%>
+
+<%- include('./common/menu') -%>
+
+    <div class="contentDiv" id="content">
+        <h2 style="text-align:center">Creators</h2>
+
+        <!--for-->
+        <div class="card">
+            <img src="<%= creator_data.profile_picture %>" alt="Profile picture" style="width:100%">
+            <h1><%= creator_data.name %></h1>
+            <p><%= creator_data.email %></p>
+            <p><%= creator_data.number_of_pictures %></p>
+            <p>
+                <!--TODO kicserélni linket-->
+                <a href="editCreator.html"><button class="profileButton">Edit</button></a>
+                <button>Delete</button>
+            </p>
+        </div>
+    </div>
+
+<%- include('./common/footer') -%>
