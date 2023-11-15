@@ -1,0 +1,30 @@
+<%- include('./common/header', {page_title: "Edit Creator"}) -%>
+
+<%- include('./common/menu') -%>
+
+    <div class="contentDiv" id="content">
+        <h2 style="text-align:center">Edit Creator</h2>
+
+        <div class="card">
+            <form method="post" enctype="multipart/form-data">
+            <label for="profile_picture">Change profile picture (optional)</label>
+            <div id="addPicture">
+                <input type="file" id="fileInput" accept="image/*" name="profile_picture">
+            </div>
+            <label for="name">Név</label>
+            <input type="text" value="<%= creator.name %>" name="name">
+            <label for="email">Email</label>
+            <input type="text" value="<%= creator.email %>" name="email">
+            <p>Number of pictures: <%= creator.number_of_pictures %></p>
+            <div>
+                <button type="button" onclick="window.location.href='/creators'">Cancel</button>
+                <!--<a href="/creators">Cancel</a> ha beteszem formba, akkorn nem működik-->
+                <input type="submit" value="Update"/> <!--nem jó-->
+            </div>
+            </form>
+        </div>
+    </div>
+
+<%- include('./common/footer') -%>
+
+//54

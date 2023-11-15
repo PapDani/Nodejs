@@ -1,0 +1,26 @@
+<%- include('./common/header', {page_title: "Creators"}) -%>
+
+<%- include('./common/menu') -%>
+
+    <div class="contentDiv" id="content">
+        <h2 style="text-align:center">Creators</h2>
+
+        <% creators.forEach(function(creator){ %>
+            <div class="card">
+                <img src="<%= creator.profile_picture %>" alt="Profile picture" style="width:100%">
+                <label>Name</label>
+                <h1><%= creator.name %></h1>
+                <label>Email</label>
+                <p><%= creator.email %></p>
+                <lable>Number of pictures</lable>
+                <p><%= creator.number_of_pictures %></p>
+                <p>
+                    <a href="/creators/edit/<%= creator._id %>"><button class="profileButton">Edit</button></a>
+                    <button>Delete</button>
+                </p>
+            </div>
+        <% }); %>
+        
+    </div>
+
+<%- include('./common/footer') -%>
