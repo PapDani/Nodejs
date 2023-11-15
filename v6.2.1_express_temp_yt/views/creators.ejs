@@ -8,11 +8,11 @@
         <% creators.forEach(function(creator){ %>
             <div class="card">
                 <img src="<%= creator.profile_picture %>" alt="Profile picture" style="width:100%">
-                <label>Name</label>
+                <p>Name</p>
                 <h1><%= creator.name %></h1>
-                <label>Email</label>
+                <p>Email</p>
                 <p><%= creator.email %></p>
-                <lable>Number of pictures</lable>
+                <p>Number of pictures</p>
                 <p><%= creator.number_of_pictures %></p>
                 <p>
                     <a href="/creators/edit/<%= creator._id %>"><button class="profileButton">Edit</button></a>

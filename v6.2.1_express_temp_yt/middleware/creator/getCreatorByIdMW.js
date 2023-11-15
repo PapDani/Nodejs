@@ -1,5 +1,6 @@
 module.exports = function(objectRepositroy){
     return function(req, res, next){
+        console.log("getCeratorByIdMW fut");
         res.locals.creator = 
             {
                 _id: '001',

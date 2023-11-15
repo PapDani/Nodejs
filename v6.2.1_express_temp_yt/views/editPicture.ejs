@@ -22,20 +22,20 @@
               
               <!--Lehet listtel vagy táblával jobba járok, majd ha lesz backend meg adatok akkor kiderül-->
               <br>
-              <label>Image ID: <%= picture._id %></label>
+              <p>Image ID: <%= picture._id %></p>
               <br>
-              <label>Picture uploaded: <%= picture.uploaded_at %></label>
+              <p>Picture uploaded: <%= picture.uploaded_at %></p>
               <br>
-              <label>Data modified at: <%= picture.modified_at %></label>
+              <p>Data modified at: <%= picture.modified_at %></p>
               <br>
               <!--lehet nem fogom használni, tárolni, majd sémánál és db logikánál eldöntöm-->
-              <label>Picture deleted at: xxxx-xx-xx</label>
+              <p>Picture deleted at: xxxx-xx-xx</p>
               <br>
-              <label>Created by: <%= picture.created_by %></label>
+              <p>Created by: <%= picture.created_by %></p>
               <div>
                   <button type="button" onclick="window.location.href='/gallery/edit'">Cancel</button>
                   <!--<input type="submit" href="/gallery" value="Update"/>-->
-                  <button type="submit">Update</button> <!--nem jó-->
+                  <button type="submit" onclick="window.location.href='/gallery/edit'">Update</button> <!--nem jó-->
               </div>
             </div>
           </form>
