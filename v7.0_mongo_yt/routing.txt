@@ -1,0 +1,64 @@
+- index.ejs         - menüsor + header
+- gallery.ejs       - menüsor + összes kép időrendi sorrendben
+- editGallery.ejs   - menüsor + összes kép időrendi sorrendben + minden kép alatt egy edit és egy delete gomb
+- editPicture.ejs   - (menüsor) + kiválasztott kép és adatai + cancel és update gomb
+- creators.ejs      - menüsor + kreátorok adatai adatbázishoz való hozzáadási időrendben + minden kreátor alatt edit és delete gomb
+- editCreator.ejs   - (menüsor) + kiválasztott kreátor adatai + cancel és update gomb
+- addPicture.ejs    - menüsor + kép kiválasztó/feltöltő/hozzáadó gomb + új kretáor oldalra navigáló gomb + add picture gomb
+- addCreator.ejs    - menüsor + kép feltöltő/hozzáadó gomb + kreátor form + add creator gomb
+
+Routing
+
+renderMW
+
+getPicturesMW
+getPictureByIdMW
+updatePictureMW
+deletePictureMW
+addPictureMW
+
+getCreatorsMW
+getCreatorByIdMW
+updateCreatorMW
+deleteCreatorMW
+addCreatorMW
+
+GET /                                   - index.ejs
+
+GET /gallery                            - gallery.ejs
+    getPicturesMW
+    renderMW
+
+GET /gallery/edit                       - editGallery.ejs
+    getPicturesMW
+    renderMW
+
+GET, POST /gallery/edit/:pictureid      - editPicture.ejs
+    getPictureByIdMW
+    updatePictureMW
+    renderMW
+
+GET /gallery/delete/:pictureid  - del
+    getPictureByIdMW - nem biztos, hogy kell
+    deletePictureMW
+
+GET /creators                           - creators.ejs
+    getCreatorsMW
+    renderMW
+
+GET, POST /creators/edit/:creatorid     - editCreator.ejs
+    getCreatorByIdMW
+    updateCreatorMW
+    renderMW
+
+GET /creators/delete/:creatorid - del
+    getCreatorByIdMW - nem biztos, hogy kell
+    deleteCreatorMW
+
+GET, POST /addpicture                   - addPicture.ejs (új kép hozzáadása form(oldal) kirenderelésére kell)
+    addPictureMW - if(typeof req.body.name === 'undefined'){return next();}
+    renderMW
+
+GET, POST /addcreator                   - addCreator.ejs
+    addCreatorMW
+    renderMW
