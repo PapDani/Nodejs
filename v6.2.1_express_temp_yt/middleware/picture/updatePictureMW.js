@@ -7,6 +7,7 @@ module.exports = function(objectRepositroy){
             console.log("első futás");
         }
         else{
+            console.log("req.body:");
             console.log(req.body);
         }
         return next();

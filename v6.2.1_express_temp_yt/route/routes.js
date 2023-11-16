@@ -14,16 +14,39 @@ const updatePictureMW = require('../middleware/picture/updatePictureMW');
 
 //models
 
+
+//Képekhez 6.2.1.
+const multer = require('multer');
+const upload = multer({dest: './uploads/'});
+
 //
 module.exports = function(app){
     const objectRepository = {
         //models
     };
 
+    //end pointok profil képek kiszolgálására 6.2.1.
+    app.use('/creators/profilepicture/:id',
+        function(req, res, next){
+            const path = "C:/Users/papda/OneDrive/Asztali gép/Budapest egyetem/3. félév/JavaScript/workspace_for_js_class/git/Nodejs/v6.2.1_express_temp_yt/uploads/";
+            console.log(`C:/Users/papda/OneDrive/Asztali gép/Budapest egyetem/3. félév/JavaScript/workspace_for_js_class/git/Nodejs/v6.2.1_express_temp_yt/uploads/${req.params.id}`);
+            res.sendFile(`${path}${req.params.id}`,{
+                headers:{
+                    'content-type':'image/jpeg'
+                }
+            });
+        });
+
+    app.get(
+        '/',
+        renderMW(objectRepository, 'index.ejs')
+    );
+
     //Creator add (create)
     app.use(
         '/addcreator',
-        addCreatorMW(objectRepository),
+        upload.single('profile'), //ennek a stringnek meg kell egyeznie a megfelelő ejs fájlban a hozzá tartozó input hoz tartózó name-nak (és/vagy idnak)
+        addCreatorMW(objectRepository), //FONTOS!!! return next(); hiányzott middlewareből
         renderMW(objectRepository, 'addCreator')
     );
 
@@ -52,6 +75,7 @@ module.exports = function(app){
     //Picture add (create)
     app.use(
         '/addpicture',
+        upload.single('picture'),
         addPictureMW(objectRepository),
         renderMW(objectRepository, 'addPicture')
     );
