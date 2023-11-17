@@ -9,25 +9,23 @@ module.exports = function (objectRepository) {
         const creatorId = req.params.creatorid;
         console.log("getCreatorById: " + creatorId);
 
-        // Use findById to find a creator by its ID
         CreatorModel.findById(creatorId)
             .then((creator) => {
-                // Check if a creator was found
                 
-                if (!creator) {
-                    const error = new Error('Creator not found'); 
-                    res.status = 404;                   
+                //TODO megjeleníteni errort létező error middlewareval
+                /*
+                if (!deletedCreator) {
+                    const error = new Error('Creator not found');
+                    res.status = 404;
                     throw error;
                 }
+                */
                 
-                // Attach the found creator to res.locals
                 res.locals.creator = creator;
 
-                // Continue to the next middleware
                 return next();
             })
             .catch((err) => {
-                // Handle any errors that occurred during the query
                 return next(err);
             });
     };

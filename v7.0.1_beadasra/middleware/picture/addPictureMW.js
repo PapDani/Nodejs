@@ -6,22 +6,26 @@ module.exports = function (objectRepository) {
 
     return function (req, res, next) {
 
-        if((typeof req.body.title === 'undefined') || (typeof req.body.description === 'undefined') || (typeof req.body.created_by === 'undefined')){
+        if((typeof req.body.title === 'undefined') || (typeof req.body.description === 'undefined')){
             return next();
         }
 
-        //miért nem jön át, ami ejs-el van megadva adat??? (ugyan ez a hiba a creator update-nél is)
         console.log(req.body);
+        console.log("id: ");
+        console.log(req.body.creators);
 
         const title = req.body.title;
         const description = req.body.description;
-        const created_by = req.body.created_by;
+        const created_by = req.body.creators;
+
+        console.log("created_by: ");
+        console.log(created_by);
 
         const newPicture = new PictureModel({
             _id: new mongoose.Types.ObjectId(),
             title: title,
             description: description,
-            created_by: created_by
+            _created_by: created_by
         });
 
         newPicture.save()

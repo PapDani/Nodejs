@@ -12,13 +12,13 @@ const getPictureByIdMW = require('../middleware/picture/getPictureByIdMW');
 const getPicturesMW = require('../middleware/picture/getPicturesMW');
 const updatePictureMW = require('../middleware/picture/updatePictureMW');
 
-//models 7.0
 const PictureModel = require('../models/picture');
 const CreatorModel = require('../models/creator');
 
-//Képekhez 6.2.1.
 const multer = require('multer');
 const upload = multer({ dest: './uploads/' });
+
+const path = require('path');
 
 module.exports = function (app) {
     const objectRepository = {
@@ -26,10 +26,16 @@ module.exports = function (app) {
         CreatorModel: CreatorModel
     };
 
-    //routeok sorrendjének megváltoztatása a videó alapján
+    //style.css miatt
+    app.get('/style.css', (req, res) => {
+        res.setHeader('Content-Type', 'text/css');
+        const filePath = path.join(__dirname, '..', 'views', 'style.css');
+        res.sendFile(filePath);
+    });
 
     //---CREATOR---
-    //end pointok profil képek kiszolgálására 6.2.1.
+
+    //TODO képeket lekezelni, ha működik minden (update...)
     app.use('/creators/profilepicture/:id',
         function (req, res, next) { //middlewarebe betenni, esetleg?
             const path = "C:/Users/papda/OneDrive/Asztali gép/Budapest egyetem/3. félév/JavaScript/workspace_for_js_class/git/Nodejs/v6.2.1_express_temp_yt/uploads/";
@@ -66,14 +72,12 @@ module.exports = function (app) {
     //Creator add (create)
     app.use(
         '/addcreator',
-        upload.single('profile'), //ennek a stringnek meg kell egyeznie a megfelelő ejs fájlban a hozzá tartozó input hoz tartózó name-nak (és/vagy idnak)
-        addCreatorMW(objectRepository), //FONTOS!!! return next(); hiányzott middlewareből
+        upload.single('profile'),
+        addCreatorMW(objectRepository),
         renderMW(objectRepository, 'addCreator')
     );
 
     //---PICTURE---
-
-    //Fog-e kelleni endpoint ezeknek a képeknek a kiszolgálására?
 
     //Picture update
     app.use(
@@ -100,7 +104,7 @@ module.exports = function (app) {
     app.use(
         '/addpicture',
         upload.single('picture'),
-        getCreatorsMW(objectRepository),
+        getCreatorsMW(objectRepository), //kell a legördülő menű feltöltéséhez
         addPictureMW(objectRepository),
         renderMW(objectRepository, 'addPicture')
     );

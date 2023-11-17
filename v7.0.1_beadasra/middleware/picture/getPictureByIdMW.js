@@ -11,7 +11,7 @@ module.exports = function (objectRepository) {
         CreatorModel.findById(pictureId)
             .then((picture) => {
 
-                //hogy kezel, mutatom?
+                //TODO megjeleníteni errort létező error middlewareval
                 if (!picture) {
                     const error = new Error('picture not found');
                 }

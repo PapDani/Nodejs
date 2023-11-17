@@ -1,50 +1,21 @@
-
-const Creator = require('../models/creator');
-
-//CRUD ide
-//Create
-//const Creator = new Creator
-
-//R
-//Creator.find().then()
-
-//U
-
-
-//D
-
 const express = require('express'); 
-const bodyParser = require('body-parser'); //req.body-ból lehessen adatot kiolvasni
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-//6.2
-app.set('view engine', 'ejs'); //res.render-t hozza létre, minden egyes objecten
+app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('static'));
 
-require('../route/routes')(app); //kódszervezés miatt, kell a "module.exports = function(app)", pictures, cerators szét lehet szervezni, 2 külön route feliratkoztatás
+require('../route/routes')(app);
 
-//hibakezelés 7.0
-/*
 app.use((err, req, res, next) => {
   res.end('error...');
   console.log(err);
 });
-*/
 
-/*
-app.use((err, req, res, next) => {
-  res.status(err.status).send({
-      error: {
-          message: err.message,
-          stack: err.stack,
-      },
-  });
-});
-*/
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

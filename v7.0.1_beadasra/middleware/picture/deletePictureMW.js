@@ -1,8 +1,6 @@
 const requireOption = require('../requireOption');
 
 module.exports = function (objectRepository) {
-    const PictureModel = requireOption(objectRepository, 'PictureModel');
-
     return function (req, res, next) {
         const pictureId = req.params.pictureid;
 

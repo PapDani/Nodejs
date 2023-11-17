@@ -2,14 +2,7 @@ const requireOption = require('../requireOption');
 
 module.exports = function(objectRepositroy){
     return function(req, res, next){
-        console.log("updateCreatorMW fut");
-        if(req.body.title === "undefined"){
-            console.log("első futás");
-        }
-        else{
-            console.log("req.body:");
-            console.log(req.body);
-        }
+        //TODO ha sikerül megoldanom update-ot creatornál
         return next();
     };
 };
