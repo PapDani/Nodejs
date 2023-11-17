@@ -89,7 +89,7 @@ module.exports = function (app) {
 
     //Picture delete
     app.get(
-        '/gallery/del/:pictureid',
+        '/gallery/delete/:pictureid',
         getPictureByIdMW(objectRepository),
         deletePictureMW(objectRepository)
     );

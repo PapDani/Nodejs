@@ -8,7 +8,7 @@ module.exports = function (objectRepository) {
 
         const pictureId = req.params.pictureid;
 
-        CreatorModel.findById(pictureId)
+        PictureModel.findById(pictureId)
             .then((picture) => {
 
                 //TODO megjeleníteni errort létező error middlewareval
