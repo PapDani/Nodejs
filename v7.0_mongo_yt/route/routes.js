@@ -100,6 +100,7 @@ module.exports = function (app) {
     app.use(
         '/addpicture',
         upload.single('picture'),
+        getCreatorsMW(objectRepository),
         addPictureMW(objectRepository),
         renderMW(objectRepository, 'addPicture')
     );

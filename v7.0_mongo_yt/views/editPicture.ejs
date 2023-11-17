@@ -3,7 +3,7 @@
 <%- include('./common/menu') -%>
     
       <div class="contentDiv" id="content">
-        <h2 style="text-align:center">Edit Picture data</h2>
+        <h2 style="text-align:center">Edit Picture</h2>
 
         <div class="responsive">
           <div class="gallery">
@@ -13,29 +13,15 @@
           </div>
           <form method="POST">
             <div class="editPictureForm">
-              <label>Title: 
-                <input type="text" class="desc" value="<%= picture.title %>" name="title"/>
-              </label>
-              <label>Description: 
-                <input type="text" class="desc" value="<%= picture.description %>" name="description"/>
-              </label>
-              
-              <!--Lehet listtel vagy táblával jobba járok, majd ha lesz backend meg adatok akkor kiderül-->
-              <br>
-              <p>Image ID: <%= picture._id %></p>
-              <br>
-              <p>Picture uploaded: <%= picture.uploaded_at %></p>
-              <br>
-              <p>Data modified at: <%= picture.modified_at %></p>
-              <br>
-              <!--lehet nem fogom használni, tárolni, majd sémánál és db logikánál eldöntöm-->
-              <p>Picture deleted at: xxxx-xx-xx</p>
+              <label for="title">Title:</label>
+              <input type="text" class="desc" value="<%= picture.title %>" id="title" name="title"/>
+              <label for="description">Description:</label>
+              <input type="text" class="desc" value="<%= picture.description %>" id="description" name="description"/>
               <br>
               <p>Created by: <%= picture.created_by %></p>
               <div>
-                  <button type="button" onclick="window.location.href='/gallery/edit'">Cancel</button>
-                  <!--<input type="submit" href="/gallery" value="Update"/>-->
-                  <button type="submit" onclick="window.location.href='/gallery/edit'">Update</button> <!--nem jó-->
+                <a href="/gallery/edit">Cancel</a>
+                <input type="submit" value="Update"/>
               </div>
             </div>
           </form>

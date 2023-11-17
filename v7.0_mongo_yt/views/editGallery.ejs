@@ -5,29 +5,20 @@
   <div class="contentDiv" id="content">
     <h2 style="text-align:center">Edit Gallery</h2>
 
-    <!--for-->
     <% pictures.forEach(function(picture) { %>
       <div class="responsive">
         <div class="gallery">
-          <!--felül vizsgálni, működő db után-->
           <img src="<%= picture.image %>" alt="<%= picture.description %>" width="600" height="400">
           <div class="desc"><%= picture.title %></div>
           <div class="desc"><%= picture.description %></div>
         </div>
 
         <div class="center">
-          <!--TODO editálásra kiválasztott
-               kép adatainak edit oldalra való átvitele vagy kép ID alapján
-                az edit picture oldalon az adott kép adatainak lekérdezése
-                 adatbázisból-->
-          <!--TODO id átadás-->
           <a href="/gallery/edit/<%= picture._id %>"><button class="changeButton">Edit</button></a>
         </div>
         <div class="center">
-          <!--TODO id átadás-->
-          <button class="deleteButton">Delete</button>
+          <a href="/creators/delete/<%= creator._id %>"><button>Delete</button></a>
         </div>
-
       </div>
     <% }) %>
 

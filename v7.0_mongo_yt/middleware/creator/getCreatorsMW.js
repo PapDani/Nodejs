@@ -1,9 +1,9 @@
 const requireOption = require('../requireOption');
 
-module.exports = function (objectRepositroy) {
+module.exports = function (objectRepository) {
 
     //indításkor ez lefut, megvéd h a model ne undefined legyen
-    const CreatorModel = requireOption(objectRepositroy, 'CreatorModel');
+    const CreatorModel = requireOption(objectRepository, 'CreatorModel');
     //vagy const CreatorModel = objectRepository['CreatorModel'];
 
     return function (req, res, next) {
