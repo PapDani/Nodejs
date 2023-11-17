@@ -12,11 +12,9 @@
                 <h1><%= creator.name %></h1>
                 <p>Email</p>
                 <p><%= creator.email %></p>
-                <p>Number of pictures</p>
-                <p><%= creator.number_of_pictures %></p>
                 <p>
                     <a href="/creators/edit/<%= creator._id %>"><button class="profileButton">Edit</button></a>
-                    <button>Delete</button>
+                    <a href="/creators/delete/<%= creator._id %>"><button>Delete</button></a>
                 </p>
             </div>
         <% }); %>

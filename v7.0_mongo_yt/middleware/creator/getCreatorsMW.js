@@ -1,4 +1,3 @@
-const { db } = require('../../models/picture');
 const requireOption = require('../requireOption');
 
 module.exports = function (objectRepositroy) {
@@ -23,4 +22,3 @@ module.exports = function (objectRepositroy) {
             });
     };
 };
-

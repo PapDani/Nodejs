@@ -28,10 +28,23 @@ app.use(express.static('static'));
 require('../route/routes')(app); //kódszervezés miatt, kell a "module.exports = function(app)", pictures, cerators szét lehet szervezni, 2 külön route feliratkoztatás
 
 //hibakezelés 7.0
+/*
 app.use((err, req, res, next) => {
-  res.end('hiba...');
+  res.end('error...');
   console.log(err);
 });
+*/
+
+/*
+app.use((err, req, res, next) => {
+  res.status(err.status).send({
+      error: {
+          message: err.message,
+          stack: err.stack,
+      },
+  });
+});
+*/
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
