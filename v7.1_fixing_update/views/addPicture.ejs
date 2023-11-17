@@ -1,0 +1,31 @@
+<%- include('./common/header', {page_title: "Add Picture" }) -%>
+
+  <%- include('./common/menu') -%>
+
+    <div class="contentDiv" id="content">
+
+      <h2 style="text-align:center">Add picture</h2>
+
+      <form method="post" enctype="multipart/form-data">
+        <label for="picture">Upload a picture:</label>
+        <div id="addPicture">
+          <input type="file" id="picture" name="picture" accept="image/*">
+        </div>
+        <div id="selectCreator">
+          <label for="creators">Choose a creator:</label>
+          <select id="creators" name="creators">
+            <!--adatbázisból creator nevekkel feltölteni a optionokat-->
+            <option value="">Existing creators</option>
+            <option value="test1">test1</option>
+            <option value="test2">test2</option>
+          </select>
+          <button type="button" onclick="window.location.href='/addcreator'">Add new creator</button>
+        </div>
+        <div>
+          <!--TODO kicserélni linket-->
+          <button type="submit" onclick="">Add picture</button> <!--navigáció nem jó-->
+        </div>
+      </form>
+    </div>
+
+  <%- include('./common/footer') -%>
