@@ -12,8 +12,9 @@ const getPictureByIdMW = require('../middleware/picture/getPictureByIdMW');
 const getPicturesMW = require('../middleware/picture/getPicturesMW');
 const updatePictureMW = require('../middleware/picture/updatePictureMW');
 
-//models
-
+//models 7.0
+const PictureModel = require('../models/picture');
+const CreatorModel = require('../models/creator');
 
 //Képekhez 6.2.1.
 const multer = require('multer');
@@ -21,7 +22,8 @@ const upload = multer({ dest: './uploads/' });
 
 module.exports = function (app) {
     const objectRepository = {
-        //models
+        PictureModel: PictureModel,
+        CreatorModel: CreatorModel
     };
 
     //routeok sorrendjének megváltoztatása a videó alapján

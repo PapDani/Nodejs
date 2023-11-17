@@ -7,7 +7,7 @@
 
         <% creators.forEach(function(creator){ %>
             <div class="card">
-                <img src="http://localhost:3000/creators/profilepicture/e9cb9b069899cd4de910bbddfc3e19e9" alt="Profile picture" style="width:100%">
+                <img src="<%= creator.profile_picture %>" alt="Profile picture" style="width:100%">
                 <p>Name</p>
                 <h1><%= creator.name %></h1>
                 <p>Email</p>
@@ -20,7 +20,6 @@
                 </p>
             </div>
         <% }); %>
-        
     </div>
 
 <%- include('./common/footer') -%>
