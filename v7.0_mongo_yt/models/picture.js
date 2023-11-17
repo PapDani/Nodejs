@@ -9,7 +9,7 @@ const Picture = db.model('Picture', {
     description: String,
     uploaded_at: Date,
     modified_at: Date,
-    created_by: {
+    _created_by: { //aláhúzást tettem elé 7.0
         type: Schema.Types.ObjectId,
         ref: 'Creator'
     }
