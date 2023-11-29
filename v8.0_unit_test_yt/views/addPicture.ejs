@@ -1,0 +1,36 @@
+<%- include('./common/header', {page_title: "Add Picture" }) -%>
+
+  <%- include('./common/menu') -%>
+
+    <div class="contentDiv" id="content">
+
+      <h2 style="text-align:center">Add picture</h2>
+
+      <form method="post" enctype="multipart/form-data">
+        <label for="picture">Upload a picture:</label>
+        <div id="addPicture">
+          <input type="file" id="picture" name="picture" accept="image/*">
+        </div>
+        <div id="selectCreator">
+          <label for="creators">Choose a creator:</label>
+          <select id="creators" name="creators">
+            <option value="">Existing creators</option>
+            <% creators.forEach(function(creator){ %>
+              <option value="<%= creator._id %>"><%= creator.name %></option>
+            <% }); %>
+          </select>
+          <button type="button" onclick="window.location.href='/addcreator'">Add new creator</button>
+
+          <label for="title">Title:</label>
+          <input id="title" name="title" placeholder="Title">
+
+          <label for="description">Description:</label>
+          <input id="description" name="description" placeholder="Description">
+        </div>
+        <div>
+          <button type="submit">Add picture</button>
+        </div>
+      </form>
+    </div>
+
+  <%- include('./common/footer') -%>

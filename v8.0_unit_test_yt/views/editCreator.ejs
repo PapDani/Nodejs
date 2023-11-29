@@ -1,0 +1,25 @@
+<%- include('./common/header', {page_title: "Edit Creator" }) -%>
+
+    <%- include('./common/menu') -%>
+
+        <div class="contentDiv" id="content">
+            <h2 style="text-align:center">Edit Creator</h2>
+            <div class="card">
+                <form method="post">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" value="<%= creator.name %>">
+
+                    <!--tehát egy egész napon arra ment el, hogy ezt megoldjam, nem tudtam megérteni, hogy hogyan lehet, hogy már az addpicturenél működik, azaz a <select id="creators" name="creators">, ezért a middlewareban req.body.creators-ból kapom meg az id-t.
+                        itt minden jól van elnevezve és a middlewareban is. Egyszerűen képtelen voltam elhinni, hogy nem működik ez. Ezért kitöröltem az egyik input mezőt és 1 db önmagában működött, visszaillesztettem a másikat és most már az is működik, de hogy miért, hogy????-->
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" value="<%= creator.email %>">
+
+                    <div>
+                        <a href="/creators">Cancel</a>
+                        <button type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <%- include('./common/footer') -%>
